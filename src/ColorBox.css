@@ -39,6 +39,7 @@
     text-transform: uppercase;
     border: none;
     text-decoration: none;
+    opacity: 0;
 }
 
 .ColorBox:hover .copy-button {
