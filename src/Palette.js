@@ -1,12 +1,12 @@
 import React, { Component } from 'react'
+import 'rc-slider/assets/index.css'
 import ColorBox from './ColorBox'
 import './Pallette.css'
 import { v4 as uuid } from 'uuid';
 import Slider from 'rc-slider';
-import 'rc-slider/assets/index.css'
 
 export default class Palette extends Component {
-  
+
   constructor(props) {
     super(props)
     this.state = {
@@ -31,11 +31,13 @@ export default class Palette extends Component {
     return (
       <div className='Palette'>
         {/* NavBar */}
-        <Slider 
-        defaultValue={level} 
-        step = {100} min={100} max={900} 
-        onAfterChange = {this.changelLevel}>
-        </Slider>
+        <div className='slider'>
+          <Slider 
+            defaultValue={level} 
+            step = {100} min={100} max={900} 
+            onAfterChange = {this.changelLevel}>
+          </Slider>
+        </div>
         <div className='Palette-colors'>{colorBox}</div>
         {/* Footer */}
       </div>
