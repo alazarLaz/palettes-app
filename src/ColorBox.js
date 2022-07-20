@@ -56,7 +56,3 @@ export default class ColorBox extends Component {
     )
   }
 }
-{/* <div 
-                style={{background: `${this.props.color}`}}
-                 className={`copy-overlay ${copied?' show':''}`}
-                 /> */}

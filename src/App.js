@@ -3,10 +3,10 @@ import colorSeed from './colorSeed'
 import Palette from './Palette';
 
 function App() {
-  console.log(generatePalette(colorSeed[4]))
+  console.log()
   return (
     <div className="App">
-      <Palette {...colorSeed[4]} />
+      <Palette palette =  {generatePalette(colorSeed[4])} />
     </div>
   );
 }
