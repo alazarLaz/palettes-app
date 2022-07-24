@@ -16,3 +16,14 @@ body{
 .Palette-colors{
     height: 90%;
 }
+.Palette-footer{
+    background: white;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    height: 5vh;
+}
+.emoji{
+    margin: auto 1.5rem;
+    font-size: 1.5rem;
+}
