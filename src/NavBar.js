@@ -2,7 +2,9 @@ import React, { Component } from 'react'
 import Slider from 'rc-slider';
 import MenuItem from '@mui/material/MenuItem'
 import './NavBar.css'
-import { Select } from '@mui/material';
+import { IconButton, Select, Snackbar } from '@mui/material';
+import CloseIcon from '@mui/icons-material/Close';
+
 
 
 export default class NavBar extends Component {
@@ -10,20 +12,27 @@ export default class NavBar extends Component {
       super(props)
     
       this.state = {
-         value: "hex"
+         value: "hex", open : false
       }
       this.handleChange = this.handleChange.bind(this)
+      this.handleSnackBarClose = this.handleSnackBarClose.bind(this)
     }
 
     handleChange(evt)
     {
         this.setState({value: evt.target.value})
         this.props.changeFormat(evt.target.value)
+        this.setState({ open:true })
+
+    }
+    handleSnackBarClose(evt)
+    {
+        this.setState({open:false})
     }
     
   render() {
     const { changelLevel, level } = this.props;
-    const { value } = this.state;
+    const { value, open } = this.state;
     return (
       <div className='Navbar'>
         <div className='Logo'><p>reactcolorpicker</p></div>
@@ -35,11 +44,24 @@ export default class NavBar extends Component {
               onAfterChange = { changelLevel }>
             </Slider>
           </div>
-          <Select value={value} onChange = {this.handleChange}>
+          <Select value={value} onChange = {this.handleChange} className = "select-menu">
                 <MenuItem value = "hex">Hex - #ffffff</MenuItem>
                 <MenuItem value = "rgb">Rgb - (255,255,255)</MenuItem>
                 <MenuItem value = "rgba">Rgba - (255,255,255,1)</MenuItem>
             </Select>
+            <Snackbar
+                open = { open } 
+                autoHideDuration = { 6000 }
+                onClose = { this.handleSnackBarClose }
+                message = {<span>Format changed to : {value.toUpperCase()}</span>}
+                action = {[
+                <IconButton 
+                onClick={this.handleSnackBarClose}
+                color = "inherit"
+                children = { <CloseIcon/> }
+                />
+                ]}
+                />
       </div>
     )
   }
