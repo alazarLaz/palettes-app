@@ -109,29 +109,5 @@
     font-weight: 100;
     font-size: 2rem;
 }
-.slider{
-    width: 340px;
-    margin: 0 10px;
-    display: inline-block;
-}
-.rc-slider-track{
-    background-color: transparent;
-}
-.rc-slider-rail{
-    height: 8px;
-}
-.rc-slider-handle,
-.rc-slider-handle:focus,
-.rc-slider-handle:hover,
-.rc-slider-handle:active
-{
-    background-color: green;
-    border: 2px solid green;
-    outline: none;
-    width: 13px;
-    height: 13px;
-    margin-left: -7px;
-    margin-top: -3px;
-}
 
 

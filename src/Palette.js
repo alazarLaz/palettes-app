@@ -3,7 +3,7 @@ import 'rc-slider/assets/index.css'
 import ColorBox from './ColorBox'
 import './Pallette.css'
 import { v4 as uuid } from 'uuid';
-import Slider from 'rc-slider';
+import NavBar from './NavBar';
 
 export default class Palette extends Component {
 
@@ -11,33 +11,37 @@ export default class Palette extends Component {
     super(props)
     this.state = {
        level : 500,
+       value : "hex"
     }
     this.changelLevel = this.changelLevel.bind(this)
+    this.changeFormat = this.changeFormat.bind(this)
   }
 
   changelLevel(level)
   {
     this.setState({ level })
   }
+
+  changeFormat(format)
+  {
+    this.setState({
+      value: format
+    })
+  }
  
   render() {
     const { colors } = this.props.palette;
-    const { level } = this.state;
+    const { level, value } = this.state;
     let colorBox = colors[level].map(color =>
        <ColorBox 
-       key={uuid()} 
-       color = {color.hex} 
+       key={ uuid() } 
+       color = {color[value]} 
        title = {color.name} />)
     return (
-      <div className='Palette'>
-        {/* NavBar */}
-        <div className='slider'>
-          <Slider 
-            defaultValue={level} 
-            step = {100} min={100} max={900} 
-            onAfterChange = {this.changelLevel}>
-          </Slider>
-        </div>
+      
+        <div className='Palette'>
+          {/* NavBar */}
+          <NavBar changeFormat = {this.changeFormat} level = {level} changelLevel = {this.changelLevel}></NavBar>
         <div className='Palette-colors'>{colorBox}</div>
         {/* Footer */}
       </div>
