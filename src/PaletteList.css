@@ -1,0 +1,71 @@
+.PalleteList{
+    height: 100vh;
+    background-color: blue;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+.PalletesContainer{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+}
+.PalleteNavBar{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+}
+.PalleteNavBar h3{
+    font-size: 2.5rem;
+}
+.PalleteNavBar span
+{
+    text-decoration: underline;
+}
+.PalletesBox{
+    display: grid;
+    grid-template-columns: repeat(3, 30%);
+    grid-gap: 5%;
+}
+.MiniPalette{
+    background-color: white;
+    border-radius: 5px;
+}
+.MiniPaletteColors{
+    display: flex;
+    flex-wrap: wrap;
+    height: 150px;
+    padding: 5px;
+}
+.MiniPaletteColor:nth-child(1)
+{
+    border-top-left-radius: 5px;
+}
+.MiniPaletteColor:nth-child(5)
+{
+    border-top-right-radius: 5px;
+}
+.MiniPaletteColor:nth-child(16)
+{
+    border-bottom-left-radius: 5px;
+}
+.MiniPaletteColor:nth-child(20){
+    border-bottom-right-radius: 5px;
+}
+.MiniPaletteColor{
+    width: 20%;
+    height: 25%;
+}
+.MiniPaletteBar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px;
+    text-decoration: none;
+}
+.MiniPaletteBar span{
+    text-decoration: none;
+    color: black;
+}
