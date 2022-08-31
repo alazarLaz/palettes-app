@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/palettes-app/static/css/main.4adbc2cf.css",
+    "main.js": "/palettes-app/static/js/main.537f6cee.js",
+    "static/js/787.480c55b2.chunk.js": "/palettes-app/static/js/787.480c55b2.chunk.js",
+    "index.html": "/palettes-app/index.html",
+    "main.4adbc2cf.css.map": "/palettes-app/static/css/main.4adbc2cf.css.map",
+    "main.537f6cee.js.map": "/palettes-app/static/js/main.537f6cee.js.map",
+    "787.480c55b2.chunk.js.map": "/palettes-app/static/js/787.480c55b2.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.4adbc2cf.css",
+    "static/js/main.537f6cee.js"
+  ]
+}
